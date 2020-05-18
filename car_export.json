@@ -1,7 +1,5 @@
 {
-  success: true,
   result: {
-  include_total: true,
   resource_id: "f2219d56-1ca3-47c6-8dd8-ed9c352d0003",
   fields: [
   {
