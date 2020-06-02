@@ -1,24 +1,42 @@
-var map = L.map('map', {
-  center: [24.990011, 121.270653],
-  zoom: 12
+var testData = {
+  max: 1,
+  data: [
+    { lat: 24.98, lng: 121.273 },
+    { lat: 24.97, lng: 121.271 },
+    { lat: 24.91, lng: 121.23 },
+    { lat: 24.92, lng: 121.85 },
+    { lat: 24.94, lng: 121.91 },
+    { lat: 24.9, lng: 121.02 },
+    { lat: 24.88, lng: 121.83 }
+  ]
+};
+
+//圖層
+var baseLayer = L.tileLayer(
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 18
+  }
+);
+
+var cfg = {
+  radius: 0.01,
+  maxOpacity: 0.5,
+  scaleRadius: true,
+  useLocalExtrema: true,
+  latField: "lat",
+  lngField: "lng",
+  valueField: "count"
+};
+
+var heatmapLayer = new HeatmapOverlay(cfg);
+
+var map = new L.Map("map", {
+  center: new L.LatLng(24.990011, 121.270653),
+  zoom: 12,
+  layers: [baseLayer, heatmapLayer]
 });
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-var requestURL = '/10812_2.json';
-var xhr = new XMLHttpRequest();
-
-xhr.open('GET', requestURL);
-xhr.send();
-xhr.onload = function() {
-  if (this.readyState === 4 && this.status === 200) {
-    var response = JSON.parse(xhr.responseText);
-    var data = response.result.records;
-    for (let i = 0; data.length > i; i++) {
-      L.marker([data[i].lat, data[i].lon]).addTo(map);
-    }
-  }
-};
+heatmapLayer.setData(testData);
