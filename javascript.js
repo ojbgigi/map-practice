@@ -11,9 +11,9 @@ var testData = {
   ]
 };
 
-//圖層
+//layer
 var baseLayer = L.tileLayer(
-  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -26,14 +26,14 @@ var cfg = {
   maxOpacity: 0.5,
   scaleRadius: true,
   useLocalExtrema: true,
-  latField: "lat",
-  lngField: "lng",
-  valueField: "count"
+  latField: 'lat',
+  lngField: 'lng',
+  valueField: 'count'
 };
 
 var heatmapLayer = new HeatmapOverlay(cfg);
 
-var map = new L.Map("map", {
+var map = new L.Map('map', {
   center: new L.LatLng(24.990011, 121.270653),
   zoom: 12,
   layers: [baseLayer, heatmapLayer]

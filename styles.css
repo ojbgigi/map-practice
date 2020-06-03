@@ -3,6 +3,69 @@ body {
   width: 100%;
   height: 100%;
 }
+#mode {
+  position: fixed;
+  z-index: 999;
+  bottom: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px 40px 30px 30px;
+  line-height: 1.8;
+  padding-bottom: 70px;
+}
+#mode input {
+  position: absolute;
+  opacity: 0; /* hide it */
+}
+#mode input.btn {
+  opacity: 1;
+  background: rgb(242, 126, 76);
+  color: #fff;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+#mode input.btn:hover {
+  background: rgb(249, 140, 93);
+}
+#mode input.btn:active {
+  background: rgb(235, 102, 46);
+}
+#mode input.btn:focus {
+  outline: none;
+}
+#mode input + label {
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+}
+#mode input + label::before {
+  content: '';
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  background: #e5e5e5;
+}
+#mode input:hover + label::before {
+  background: #ddd;
+}
+#mode input:checked + label::before {
+  background: rgb(242, 126, 76);
+}
+#mode input:checked + label::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
+    4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}
 #map {
   width: 100%;
   height: 100%;
