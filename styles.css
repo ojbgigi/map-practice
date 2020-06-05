@@ -16,7 +16,7 @@ body {
   position: absolute;
   opacity: 0; /* hide it */
 }
-#mode input.btn {
+#mode input#btn {
   opacity: 1;
   background: rgb(242, 126, 76);
   color: #fff;
@@ -25,13 +25,13 @@ body {
   border: none;
   cursor: pointer;
 }
-#mode input.btn:hover {
+#mode input#btn:hover {
   background: rgb(249, 140, 93);
 }
-#mode input.btn:active {
+#mode input#btn:active {
   background: rgb(235, 102, 46);
 }
-#mode input.btn:focus {
+#mode input#btn:focus {
   outline: none;
 }
 #mode input + label {
