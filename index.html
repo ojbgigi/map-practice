@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Map-practice</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
-  <!--plugin Leaflet.markercluster-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css"></link> 
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css"></link> 
-  <link rel="stylesheet" href="/styles.css"/>
-</head>
-<body>
-<div id="mode">
-<input type="checkbox" id="mode-car" name="category" value="car">
-<label for="mode-car">car</label><br>
-<input type="checkbox" id="mode-motor" name="category" value="motor">
-<label for="mode-motor">motor</label><br>
-<input type="checkbox" id="mode-house" name="category" value="house">
-<label for="mode-house">house</label><br>
-<input type="checkbox" id="mode-bike" name="category" value="bike">
-<label for="mode-bike">bike</label><br>
-<input type="submit" value="Submit" id="btn">
-</div>
-<div id="map"></div>
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-<!--plugin heatmap-->
-<script src="/heatmap.js"></script>
-<script src="/leaflet-heatmap.js"></script>
-<script src="/javascript.js" defer></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Map-practice</title>
+    <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"
+    />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <link rel="stylesheet" href="/dist/styles.css" />
+  </head>
+  <body>
+    <div id="mode">
+      <input type="checkbox" id="mode-car" name="category" value="car" />
+      <label for="mode-car">car</label><br />
+      <input type="checkbox" id="mode-motor" name="category" value="motor" />
+      <label for="mode-motor">motor</label><br />
+      <input type="checkbox" id="mode-house" name="category" value="house" />
+      <label for="mode-house">house</label><br />
+      <input type="checkbox" id="mode-bike" name="category" value="bike" />
+      <label for="mode-bike">bike</label><br />
+      <input type="submit" value="Submit" id="btn" />
+    </div>
+    <div id="map"></div>
+    <!--plugin heatmap-->
+    <script src="/dist/leaflet-heat.js"></script>
+    <script src="/dist/data.js"></script>
+    <script src="/dist/javascript.js"></script>
+  </body>
 </html>
