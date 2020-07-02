@@ -28,7 +28,6 @@ window.onload = function() {
         }
       }
     }
-    console.log(selected);
     draw(selected);
   };
 
